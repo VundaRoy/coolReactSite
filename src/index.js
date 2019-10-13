@@ -12,14 +12,23 @@ function tick() {
     ReactDOM.render(element, document.getElementById('time'));
 }
 setInterval(tick, 1000);
-var element = React.createElement('h1', { className: 'greeting' }, 'Hello and welcome to a typical react site');
+var element = React.createElement('h1', { className: 'greeting' }, 'Welcome to Expediency with the right API');
 
 ReactDOM.render(element, document.getElementById('thugil'));
 
 ReactDOM.render(<Welcome />, document.getElementById('root'));
-//ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+class Header{
+    constructor (){
+        this.color ="Blue";
+    }
+    changeColor =()=>{
+        document.getElementById("thugil").innerHTML+=this;
+    }
+}
+
+var myheader = new Header();
+window.addEventListener("load",myheader.changeColor);
+document.getElementById("btn").addEventListener("click",myheader.changeColor);
